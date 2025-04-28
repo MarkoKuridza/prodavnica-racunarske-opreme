@@ -1,0 +1,1 @@
+Korišten je Visual Studio 2017 i .net 4.7.2.

@@ -1,0 +1,7 @@
+1. Podrška dva tipa korisničkih naloga:
+	- Menadžer (upravlja prodavcima, proizvodima, nabavkama) i
+	- Prodavac (upravlja fakturama, pregled faktura).
+2. Korisničko uputstvo.
+3. Internacionalizacija (srpski i engleski).
+
+github: 

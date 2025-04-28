@@ -1,0 +1,269 @@
+﻿<Window x:Class="Projekat_A_Prodavnica_racunarske_opreme.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekat_A_Prodavnica_racunarske_opreme.Util"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="ManagerWindow" Height="500" Width="1500" WindowState="Maximized">
+    <Window.Resources>
+        <local:EmptyToVisibilityConverter x:Key="EmptyToVisibilityConverter"/>
+    </Window.Resources>
+    <Grid>
+        <TabControl>
+            <TabItem x:Name="EditEmployees" Header="Edit Employee">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" x:Name="AllEmpolyees" Header="All Employees" Margin="10,10,1,10">
+                        <StackPanel>
+                            <DataGrid x:Name="dgEmployees" AutoGenerateColumns="False" CanUserAddRows="False"
+                                  MaxHeight="600" Width="350" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                                  SelectionChanged="DgEmployees_SelectionChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="IdEmp" Header="ID"  Binding="{Binding IdZaposlenog}" Width="80"  IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="NameEmp" Header="Name" Binding="{Binding Ime}" Width="120" IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="SurrnameEmp" Header="Surrname" Binding="{Binding Prezime}" Width="120" IsReadOnly="True"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <TextBlock x:Name="txtEmployeesData" Text="Nema podataka za prikaz" Width="200" Height="30" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15" FontWeight="Bold" FontSize="15"
+                               Visibility="{Binding ElementName=dgEmployees, Path=HasItems, Converter={StaticResource EmptyToVisibilityConverter}}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" x:Name="EmployeeDetails" Header="EmployeeDetails" Margin="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="300"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <Label x:Name="lbId" Content="ID" Margin="5"/>
+                                <TextBox x:Name="txtId" HorizontalAlignment="Left"  Width="150" Margin="5" IsReadOnly="True" />
+                                <Label x:Name="lbName" Content="Name:" Margin="5"/>
+                                <TextBox x:Name="txtName" HorizontalAlignment="Left"  Width="150" Margin="5" />
+                                <Label x:Name="lbSurrname" Content="Surrname:" Margin="5"/>
+                                <TextBox x:Name="txtSurrname"  HorizontalAlignment="Left" Width="150" Margin="5"/>
+                                <Label x:Name="lbEmail" Content="Email" Margin="5"/>
+                                <TextBox x:Name="txtEmail"  HorizontalAlignment="Left" Width="150" Margin="5"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <Label x:Name="lbRole" Content="Role:" Margin="5"/>
+                                <ComboBox x:Name="cbRole"  HorizontalAlignment="Left"  Width="150" Margin="5" />
+                                <Label x:Name="lbDate" Content="Date:" Margin="5"/>
+                                <TextBox x:Name="tbDate"  HorizontalAlignment="Left" Width="150" Margin="5" IsReadOnly="True"/>
+                                <CheckBox x:Name="cbActive" Content="Active" Margin="5" />
+                                <Button x:Name="btnSaveChanges" Content="Save Changes" Click="BtnSaveChanges_Click" Margin="80"/>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="AddEmployee" Header="Add Employee">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label x:Name="lbNameAdd" Content="Name:" Margin="5"/>
+                        <TextBox x:Name="txtNameAdd" HorizontalAlignment="Left"  Width="150" Margin="5" />
+                        <Label x:Name="lbSurrnameAdd" Content="Surrname:" Margin="5"/>
+                        <TextBox x:Name="txtSurrnameAdd"  HorizontalAlignment="Left" Width="150" Margin="5"/>
+                        <Label x:Name="lbEmailAdd" Content="Email:" Margin="5"/>
+                        <TextBox x:Name="txtEmailAdd"  HorizontalAlignment="Left" Width="150" Margin="5"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label x:Name="lbRoleAdd" Content="Role:" Margin="5"/>
+                        <ComboBox x:Name="cbRoleAdd"  HorizontalAlignment="Left"  Width="150" Margin="5" />
+                        <Label x:Name="lbDateAdd" Content="Date:" Margin="5"/>
+                        <DatePicker x:Name="dpDateAdd"  HorizontalAlignment="Left" Width="150" Margin="5"/>
+                        <CheckBox x:Name="cbActiveAdd" Content="Active" Margin="5" />
+                        <Label x:Name="lbPass" Content="Password:" Margin="5"/>
+                        <TextBox x:Name="txtPass" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                        <Button x:Name="btnAdd" Content="Add" Click="BtnAdd_Click"  Margin="80"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="AddProducts" Header="Add Products">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Label x:Name="lbNameP" Content="Name:" Margin="5"/>
+                        <TextBox x:Name="txtNameP" HorizontalAlignment="Left"  Width="150" Margin="5" />
+                        <Label x:Name="lbPriceP" Content="Price:" Margin="5"/>
+                        <TextBox x:Name="txtPriceP" HorizontalAlignment="Left"  Width="150" Margin="5" 
+                                 PreviewTextInput="TxtPriceP_PreviewTextInput" MaxLength="7"
+                                 ToolTip="FORMAT: 1234.56"/>
+                        <Label x:Name="lbDescriptionP" Content="Description:" Margin="5"/>
+                        <TextBox x:Name="txtDescriptionP" HorizontalAlignment="Left"  Width="250" Margin="5,5,0,5" Height="120"
+                                 MaxLength="250" AcceptsReturn="True" TextWrapping="Wrap"/>
+                        <Label x:Name="lbCategoryP" HorizontalAlignment="Left" Content="Category:" Margin="5"/>
+                        <ComboBox x:Name="cbCategoryP" HorizontalAlignment="Left"  Width="150" Margin="5" />
+                        <Button x:Name="btnAddProduct" Content="Add Product" Click="BtnAddProduct_Click" Width="180" Margin="5"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label x:Name="lbNewCat" Content="New Category" HorizontalAlignment="Left" FontWeight="Bold" Margin="5"/>
+                        <Label x:Name="lbCatName" Content="Category Name:" HorizontalAlignment="Left" Margin="5"/>
+                        <TextBox x:Name="txtCatName" HorizontalAlignment="Left"  Width="150" Margin="5" />
+                        <Label x:Name="lbDescriptionC" Content="Description:" Margin="5"/>
+                        <TextBox x:Name="txtDescriptionC" HorizontalAlignment="Left"  Width="250" Margin="5,5,0,5" Height="120" 
+                                 MaxLength="250" AcceptsReturn="True" TextWrapping="Wrap"/>
+                        <Button x:Name="btnAddCategory" Content="Add Category" Click="BtnAddCategory_Click" Width="180" Margin="20"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Order" Header="Order From A Supplier">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="404*"/>
+                        <ColumnDefinition Width="404*"/>
+                        <ColumnDefinition Width="184*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox x:Name="gpAllP" Grid.Column="0" Header="All Products" Margin="10,10,1,1" >
+                        <StackPanel Grid.Column="0">
+                            <xctk:WatermarkTextBox x:Name="txtSearch" Margin="0,0,0,10"
+                                            Watermark="Search by Name"
+                                            TextChanged="TxtSearch_TextChanged"/>
+                            <DataGrid x:Name="dgAllP" AutoGenerateColumns="False" CanUserAddRows="False"
+                                       MaxHeight="600" Width="550" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="AProductId" Header="ID" Binding="{Binding IdProizvoda}" Width="50"  IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="AName" Header="Name" Binding="{Binding Naziv}" Width="160"  IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="AQuantity" Header="Quantity [pcs]" Binding="{Binding Kolicina}" Width="120"  IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="APrice" Header="Price [KM]" Binding="{Binding Cijena}" Width="100"  IsReadOnly="True"/>
+                                    <DataGridTemplateColumn  Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBox x:Name="tbQuantity" Width="20" Text="1" Margin="0,0,5,0"/>
+                                                    <Button Content="+" ToolTip="Add one product" Click="BtnAddOneProduct_Click" IsEnabled="True"
+                                                        Width="40" Height="25" Margin="2"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <TextBlock x:Name="txtProductsData" Text="Nema podataka za prikaz" Width="200" Height="30" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15" FontWeight="Bold" FontSize="15"
+                               Visibility="{Binding ElementName=dgAllP, Path=HasItems, Converter={StaticResource EmptyToVisibilityConverter}}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox x:Name="gpOrder" Grid.Column="1" Header="Products For Order"  Margin="10,10,1,1">
+                        <StackPanel>
+                            <DataGrid x:Name="dgOrderProducts" AutoGenerateColumns="False" CanUserAddRows="False"
+                                  MaxHeight="600" Width="550" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding IdProizvoda}" Width="50"  IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="IName" Header="Name" Binding="{Binding Naziv}" Width="160"  IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="IQuantity" Header="Quantity [pcs]" Binding="{Binding Kolicina}" Width="120"  IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="IPrice" Header="Price [KM]" Binding="{Binding Cijena}" Width="100"  IsReadOnly="True"/>
+                                    <DataGridTemplateColumn Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="-" ToolTip="Remove one product" Click="BtnRemoveProduct_Click" IsEnabled="True"
+                                                        Width="40" Height="25" Margin="2"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <TextBlock x:Name="txtProductsOrderData" Text="Nema podataka za prikaz" Width="200" Height="30" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15" FontWeight="Bold" FontSize="15"
+                               Visibility="{Binding ElementName=dgOrderProducts, Path=HasItems, Converter={StaticResource EmptyToVisibilityConverter}}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox x:Name="gpOrderD" Grid.Column="2" Header="Order Details" Margin="10,10,1,10">
+                        <StackPanel>
+                            <Label x:Name="lbSupplier" Content="Supplier:" HorizontalAlignment="Left" Margin="5"/>
+                            <ComboBox x:Name="cbSuppliers" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                            <Label x:Name="lbIssueDate" Content="Date of issue:" HorizontalAlignment="Left" Margin="5"/>
+                            <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="0,0,0,10" FirstDayOfWeek="Monday"/>
+                            <Label x:Name="lbTotal" Content="Total:" HorizontalAlignment="Left" Margin="5"/>
+                            <TextBox x:Name="txtTotal" IsReadOnly="True" HorizontalAlignment="Left" FontWeight="Bold" Margin="0,0,0,20" Text="0.00" TextDecorations="{x:Null}"/>
+                            <Button x:Name="btnSaveOrder" Content="Save order" Click="BtnSaveOrder_Click" Height="40"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ViewOrders" Header="View All Orders">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox x:Name="gpOrders" Grid.Column="0" Header="All Orders" Margin="10,10,1,10">
+                        <StackPanel>
+                            <DataGrid x:Name="dgOrders" AutoGenerateColumns="False" CanUserAddRows="False"
+                                  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" MaxHeight="600"
+                                  SelectionChanged="DgOrders_SelectionChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="OrderNumber" Header="Order Number" Binding="{Binding IdNabavke}" IsReadOnly="True"/>
+                                    <DataGridTextColumn x:Name="Date" Header="Date of Issue" Binding="{Binding Datum_Nabavke, StringFormat=\{0:d\}}" IsReadOnly="True"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <TextBlock x:Name="txtOrdersData" Text="Nema podataka za prikaz" Width="200" Height="30" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15" FontWeight="Bold" FontSize="15"
+                               Visibility="{Binding ElementName=dgOrders, Path=HasItems, Converter={StaticResource EmptyToVisibilityConverter}}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox x:Name="gpOrderDetails" Grid.Column="1" Header="Order Details" Margin="10,10,1,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="1005*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <Label x:Name="lbManager" Content="Manager:" Margin="5"/>
+                                <TextBox x:Name="txtMName" HorizontalAlignment="Left"  Width="150" Margin="5" IsReadOnly="True"/>
+                                <TextBox x:Name="txtMSurrname"  HorizontalAlignment="Left" Width="150" Margin="5" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <Label x:Name="lbSupplierOrder" Content="Supplier:" Margin="5"/>
+                                <TextBox x:Name="txtSName" HorizontalAlignment="Left" Width="150" Margin="5" IsReadOnly="True"/>
+                                <TextBox x:Name="txtSEmail" HorizontalAlignment="Left" Width="150" Margin="5" IsReadOnly="True"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <DataGrid x:Name="dgOrdersDetails" MaxHeight="500" AutoGenerateColumns="False"
+                                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn x:Name="ProductIdO" Header="ProductId" Binding="{Binding IdProizvoda}" IsReadOnly="True" />
+                                        <DataGridTextColumn x:Name="NameO" Header="Name" Binding="{Binding Naziv}" IsReadOnly="True"/>
+                                        <DataGridTextColumn x:Name="CategoryO" Header="Category" Binding="{Binding Kategorija}" IsReadOnly="True" />
+                                        <DataGridTextColumn x:Name="QuantityO" Header="Quantity [pcs]" Binding="{Binding Kolicina}" IsReadOnly="True"/>
+                                        <DataGridTextColumn x:Name="PriceO" Header="Price [KM]" Binding="{Binding Cijena}" IsReadOnly="True"/>
+                                        <DataGridTextColumn x:Name="AmountO" Header="Amount" Binding="{Binding Iznos}" IsReadOnly="True"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <TextBlock x:Name="txtSum" Width="130"
+                                            FontWeight="Bold" Margin="250,10,255,10"/>
+                                <TextBlock x:Name="txtOrdersItemsData" Text="Nema podataka za prikaz" Width="200" Height="30" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15" FontWeight="Bold" FontSize="15"
+                               Visibility="{Binding ElementName=dgOrdersDetails, Path=HasItems, Converter={StaticResource EmptyToVisibilityConverter}}"/>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Settings" Header="Settings">
+                <Grid>
+                    <Label x:Name="Language" Content="Language:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontSize="15" FontWeight="Bold"/>
+                    <Label x:Name="lbTheme" Content="Theme:" HorizontalAlignment="Left" Margin="320,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.597,-1.438" FontSize="15" FontWeight="Bold"/>
+                    <Button x:Name="BtnEnglish" Content="English" Click="BtnEnglish_Click" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="90"/>
+                    <Button x:Name="BtnSerbian" Content="Serbian" Click="BtnSerbian_Click" HorizontalAlignment="Left" Margin="130,56,0,0" VerticalAlignment="Top" Width="90"/>
+                    <Button x:Name="BtnLight" Content="Light" Click="BtnLight_Click" HorizontalAlignment="Left" Margin="320,56,0,0" VerticalAlignment="Top" Width="90"/>
+                    <Button x:Name="BtnDark" Content="Dark" Click="BtnDark_Click" HorizontalAlignment="Left" Margin="440,56,0,0" VerticalAlignment="Top" Width="90"/>
+                    <Button x:Name="BtnSilver" Content="Silver" Click="BtnSilver_Click" HorizontalAlignment="Left" Margin="560,56,0,0" VerticalAlignment="Top" Width="90"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

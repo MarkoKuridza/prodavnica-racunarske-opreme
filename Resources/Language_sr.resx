@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Amount" xml:space="preserve">
+    <value>Iznos</value>
+  </data>
+  <data name="btnClear" xml:space="preserve">
+    <value>Poništi</value>
+  </data>
+  <data name="BtnDark" xml:space="preserve">
+    <value>Tamna</value>
+  </data>
+  <data name="btnFilter" xml:space="preserve">
+    <value>Filtriraj</value>
+  </data>
+  <data name="BtnLight" xml:space="preserve">
+    <value>Svijetla</value>
+  </data>
+  <data name="BtnLogIn" xml:space="preserve">
+    <value>Prijavi se</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Sačuvaj fakturu</value>
+  </data>
+  <data name="BtnSilver" xml:space="preserve">
+    <value>Srebrna</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategorija</value>
+  </data>
+  <data name="CInvoice" xml:space="preserve">
+    <value>Kreiraj fakturu</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Datum Izdavanja</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="gpAvaibleP" xml:space="preserve">
+    <value>Dostupni Proizvodi</value>
+  </data>
+  <data name="gpInvoiceD" xml:space="preserve">
+    <value>Detalji fakture</value>
+  </data>
+  <data name="gpInvoiceI" xml:space="preserve">
+    <value>Stavke fakture</value>
+  </data>
+  <data name="gpInvoices" xml:space="preserve">
+    <value>Fakture</value>
+  </data>
+  <data name="IName" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="InvoiceNumber" xml:space="preserve">
+    <value>Broj Fakture</value>
+  </data>
+  <data name="IPrice" xml:space="preserve">
+    <value>Cijena [KM]</value>
+  </data>
+  <data name="IQuantity" xml:space="preserve">
+    <value>Količina [kom]</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="lbCustomer" xml:space="preserve">
+    <value>Kupac</value>
+  </data>
+  <data name="lbIssueDate" xml:space="preserve">
+    <value>Datum izdavanja</value>
+  </data>
+  <data name="LbPass" xml:space="preserve">
+    <value>Lozinka</value>
+  </data>
+  <data name="lbSeller" xml:space="preserve">
+    <value>Prodavač</value>
+  </data>
+  <data name="LbTitle" xml:space="preserve">
+    <value>Prijava Na Sistem</value>
+  </data>
+  <data name="lbTotal" xml:space="preserve">
+    <value>Ukupno:</value>
+  </data>
+  <data name="LbUser" xml:space="preserve">
+    <value>Ime korisnika</value>
+  </data>
+  <data name="LogInError1" xml:space="preserve">
+    <value>Pogrešno ime ili lozinka</value>
+  </data>
+  <data name="LogInError2" xml:space="preserve">
+    <value>Zaposleni je neaktivan</value>
+  </data>
+  <data name="MenuLang" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="MenuLangEn" xml:space="preserve">
+    <value>Engleski</value>
+  </data>
+  <data name="MenuLangSr" xml:space="preserve">
+    <value>Srpski</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Cijena [KM]</value>
+  </data>
+  <data name="ProductId" xml:space="preserve">
+    <value>ID Proizvoda</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Proizvodi</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Količina [kom]</value>
+  </data>
+  <data name="SellerErrorMsg1" xml:space="preserve">
+    <value>Nema dovoljno proizvoda na stanju! Dostupno :</value>
+  </data>
+  <data name="SellerErrorMsg2" xml:space="preserve">
+    <value>Unesite validnu količinu proizvoda</value>
+  </data>
+  <data name="SellerMsgNotification" xml:space="preserve">
+    <value>Uspješno kreirana faktura!</value>
+  </data>
+  <data name="SellerMsgRemove1" xml:space="preserve">
+    <value>Da li želite ukloniti stavku</value>
+  </data>
+  <data name="SellerMsgRemove2" xml:space="preserve">
+    <value>Potvrda uklanjanjа</value>
+  </data>
+  <data name="SellerMsgWarning1" xml:space="preserve">
+    <value>Popunite sva obavezna polja!</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Podešavanja</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="Title_LogInWindow" xml:space="preserve">
+    <value>Prodavnica računarske opreme</value>
+  </data>
+  <data name="Title_SellerWindow" xml:space="preserve">
+    <value>Prodavnica računarske opreme - '{0}'</value>
+  </data>
+  <data name="txtFilterCategory" xml:space="preserve">
+    <value>Filtriraj po kategoriji</value>
+  </data>
+  <data name="txtFilterId" xml:space="preserve">
+    <value>Filtriraj po ID</value>
+  </data>
+  <data name="txtFilterName" xml:space="preserve">
+    <value>Filtriraj po nazivu</value>
+  </data>
+  <data name="txtName" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="txtPhone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="txtSearch" xml:space="preserve">
+    <value>Pretraga po nazivu</value>
+  </data>
+  <data name="txtSurrname" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="ViewInvoice" xml:space="preserve">
+    <value>Sve Fakture</value>
+  </data>
+  <data name="AddEmployee" xml:space="preserve">
+    <value>Dodaj Zaposlenog</value>
+  </data>
+  <data name="AddProducts" xml:space="preserve">
+    <value>Dodaj Proizvode</value>
+  </data>
+  <data name="AllEmployees" xml:space="preserve">
+    <value>Svi Zaposleni</value>
+  </data>
+  <data name="btnAdd" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="btnAddCategory" xml:space="preserve">
+    <value>Dodaj Kategoriju</value>
+  </data>
+  <data name="btnAddProduct" xml:space="preserve">
+    <value>Dodaj Proizvod</value>
+  </data>
+  <data name="btnSaveChanges" xml:space="preserve">
+    <value>Sačuvaj Izmjene</value>
+  </data>
+  <data name="btnSaveOrder" xml:space="preserve">
+    <value>Sačuvaj Nabavku</value>
+  </data>
+  <data name="cbActive" xml:space="preserve">
+    <value>Aktivan</value>
+  </data>
+  <data name="EditEmployee" xml:space="preserve">
+    <value>Uredi Zaposlene</value>
+  </data>
+  <data name="EmployeeDetails" xml:space="preserve">
+    <value>Detalji Zaposlenog</value>
+  </data>
+  <data name="gpAllP" xml:space="preserve">
+    <value>Svi Proizvodi</value>
+  </data>
+  <data name="gpOrder" xml:space="preserve">
+    <value>Proizvodi Za Nabavku</value>
+  </data>
+  <data name="gpOrderD" xml:space="preserve">
+    <value>Detalji Nabavke</value>
+  </data>
+  <data name="gpOrders" xml:space="preserve">
+    <value>Nabavke</value>
+  </data>
+  <data name="lbCatName" xml:space="preserve">
+    <value>Naziv Kategorije</value>
+  </data>
+  <data name="lbDate" xml:space="preserve">
+    <value>Datum zaposlenja:</value>
+  </data>
+  <data name="lbManager" xml:space="preserve">
+    <value>Menadžer</value>
+  </data>
+  <data name="lbNewCat" xml:space="preserve">
+    <value>Nova Kategorija</value>
+  </data>
+  <data name="lbRole" xml:space="preserve">
+    <value>Uloga</value>
+  </data>
+  <data name="lbSupplier" xml:space="preserve">
+    <value>Dobavljač</value>
+  </data>
+  <data name="ManagerMsgNotification" xml:space="preserve">
+    <value>Uspješno kreiran zaposleni!</value>
+  </data>
+  <data name="ManagerMsgNotification1" xml:space="preserve">
+    <value>Uspješno izvršena izmjena zaposlenog:</value>
+  </data>
+  <data name="ManagerMsgNotification2" xml:space="preserve">
+    <value>Uspješno dodat novi proizvod!</value>
+  </data>
+  <data name="ManagerMsgNotification3" xml:space="preserve">
+    <value>Uspješno dodata nova kategorija!</value>
+  </data>
+  <data name="NameEmp" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Naruči Od Dobavljača</value>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Id Nabavke</value>
+  </data>
+  <data name="SurrnameEmp" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="Title_ManagerWindow" xml:space="preserve">
+    <value>Prodavnica računarske opreme - '{0}'</value>
+  </data>
+  <data name="ViewOrders" xml:space="preserve">
+    <value>Sve Nabavke</value>
+  </data>
+  <data name="EmptyDataGrid" xml:space="preserve">
+    <value>Nema podataka za prikaz</value>
+  </data>
+  <data name="ManagerMsgNotification4" xml:space="preserve">
+    <value>Uspješno kreirana nabavka!</value>
+  </data>
+</root>
